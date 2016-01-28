@@ -1,0 +1,58 @@
+
+/************************  EDIT QUESTOES      *************************************************/
+/**********************************************************************************************/
+
+.status_ok{
+color:#169F84;
+float:right;
+border: #000 1px solid;
+padding: 3px;
+font-size: 24px;
+background-color: #9CE2AE;
+}
+
+#campo_pergunta {
+width: 100%;        
+font-size: 24px;
+}
+
+.campo_alternativa{
+width: 60%;   
+font-size: 24px;
+
+
+}
+
+.campo_revisao{
+  margin-left: 20px;    
+  float:left;  
+}
+
+.titulo_campo_edicao{
+    color:#222299;
+}
+
+.campo_de_edicao {
+  position :relative;
+  margin-left: 5px;    
+  float:left;      
+}
+
+.fundo-edicao{
+    background-color: #eeeeee;
+}
+.fundo_campo_edicao{
+    background-color: #ffffff;
+}
+.campo_criador, .data_criacao , .data_alteracao, .campo_materia{
+  position :relative;
+  margin-left: 20px;    
+  float:left;
+}
+
+.img_preview{
+    width:325px;
+    float:right;
+  margin-top: 18px;
+}
+
