@@ -8,6 +8,7 @@
 include_once('config.php');
 include(ROOT . "view/vhead.php");
 
+
 $param_escola = (isset($_GET["e"])) ? $_GET["e"] : -1;
 
 //se escola setada = -1
