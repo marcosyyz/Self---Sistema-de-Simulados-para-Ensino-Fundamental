@@ -8,7 +8,7 @@
   while(!$atividades->EndOfSeek()) {
         $linha =  $atividades->Row();
         $finalizado = true;
-        echo " <div class='atividade'><a href=".ROOT_URL."control/quiz/iniciar_atividade.php?a=".$linha->ATIVIDADE_CDG.">";
+        echo " <div class='atividade'><a href='".ROOT_URL."control/quiz/iniciar_atividade.php?a=".$linha->ATIVIDADE_CDG."&t=1'>";
         echo '<input type="button" value="';
         echo ($finalizado ? $linha->ATIVIDADE_NOME : 'INICIAR '.$linha->ATIVIDADE_NOME).'"' ;
         

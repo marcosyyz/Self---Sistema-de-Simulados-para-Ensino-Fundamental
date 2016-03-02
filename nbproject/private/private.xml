@@ -3,11 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/aluno/control/login/verificar_autenticacao_aluno.php</file>
-            <file>file:/C:/xampp/htdocs/aluno/view/admin/vimportador.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/view/quiz/vquiz.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/control/atividade/prof/index.php</file>
             <file>file:/C:/xampp/htdocs/aluno/model/login.php</file>
             <file>file:/C:/xampp/htdocs/aluno/model/admin/importador.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/view/quiz/vgameover_atividade.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/control/quiz/iniciar_atividade.php</file>
             <file>file:/C:/xampp/htdocs/aluno/model/admin/admin_usuario.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/control/login/verificar_autenticacao_aluno.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/control/atividade/index.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/view/admin/vimportador.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/view/cadastros/atividades/vedit_atividades.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/control/atividade/anonimo/index.php</file>
             <file>file:/C:/xampp/htdocs/aluno/control/admin/importar.php</file>
         </group>
     </open-files>

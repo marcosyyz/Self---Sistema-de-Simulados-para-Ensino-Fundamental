@@ -45,7 +45,7 @@ if ($param_login == 0){ ?>
   <div id="transparente-div-login" class="zoom-in-ativo">
      
     <form method="post" class="form" action="<?php echo ROOT_URL ?>control/login/autenticar_prof.php"  id="form-login">
-     <center><img class="logo-login" src="<?php echo ROOT_URL ?>view/img/self-logo.png"  /> </center>
+     <center><img width="100" class="logo-login" src="<?php echo ROOT_URL ?>view/img/logo-professor.png"  /> </center>
       <p class="name">
         <input id="nome_login" name="nome_prof" autocomplete="off" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Login do Professor" iProfd="name" />
       </p>

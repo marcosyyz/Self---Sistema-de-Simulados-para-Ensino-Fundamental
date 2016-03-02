@@ -20,7 +20,7 @@
         $linha =  $atividades->Row();     
         
         if (!$desabilitar){
-            echo " <div class='atividades'><a href=".ROOT_URL."control/quiz/iniciar_atividade.php?a=".$linha->ATIVIDADE_CDG.">";
+            echo " <div class='atividades'><a href=".ROOT_URL."control/quiz/iniciar_atividade.php?a=".$linha->ATIVIDADE_CDG."&t=1>";
             echo '<input type="button" value="';        
             echo $linha->ATIVIDADE_NOME.'"' ;                        
             echo ' class="botao-atividade ';

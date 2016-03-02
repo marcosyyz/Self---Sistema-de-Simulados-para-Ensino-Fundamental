@@ -42,7 +42,7 @@ if ($param_login == 0){ ?>
   <div id="transparente-div-login" class="zoom-in-ativo">
  
     <form method="post" class="form" action="<?php echo ROOT_URL ?>control/login/autenticar_aluno.php"  id="form-login">
-      
+      <center><img width="100" class="logo-login" src="<?php echo ROOT_URL ?>view/img/logo-aluno.png"  /> </center>
       <p class="name">
         <input name="nome_aluno" autocomplete="off" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Nome" id="nome_login" />
       </p>
