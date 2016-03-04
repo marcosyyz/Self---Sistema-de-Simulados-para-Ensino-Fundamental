@@ -8,7 +8,6 @@ include(ROOT."model/crono.php");
 //******************************************************************************************************************//          
 if (!isset($_SESSION['ATIVIDADE_ATUAL'])){
     echo " Session ATIVIDADE_ATUAL nao setada";
-//    die;
 }
 
 Crono::setFim(date("H:i:s"));

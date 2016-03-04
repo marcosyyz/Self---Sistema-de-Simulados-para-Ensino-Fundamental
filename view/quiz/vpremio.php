@@ -7,6 +7,11 @@ include_once(ROOT . "model/atividade.php");
 //$ativ = new Atividade(isset($_SESSION['ATIVIDADE_ATUAL']) ? $_SESSION['ATIVIDADE_ATUAL'] : -1,$_SESSION['ALUNO_TURMA']);
 
 
+
+
+$link_redirecionamento = ROOT_URL."control/atividade/direcionar_proxima_fase.php";
+
+
 if (isset($_SESSION['STATUS'])){
   if ($_SESSION['STATUS'] == -1 ) //qtd de questoes menor q o numero de acertos necessarios configurado
     echo "Acabaram as Questões para essa Atividade, Verifique suas configurações.";
@@ -71,12 +76,12 @@ if (isset($_SESSION['STATUS'])){
                 endif;
             }
         }else{
-            $mensagem .= "Você ganhou N pontos ...  Continuar";  
+            $mensagem .= "Você ganhou N pontos ...  Continuar ";
         }
         
  
         echo "<br><br>"
-             . " <a href='".ROOT_URL."control/atividade/direcionar_proxima_fase.php'>
+             . " <a href='".$link_redirecionamento."'>
                     <div class='submit'>
                         <input type='submit' value='".$mensagem."' id='button-green'/>
                          <div class='".( isset($ativ2) ? "ease_maior" : "ease")."'></div>   

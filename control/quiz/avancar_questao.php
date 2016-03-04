@@ -13,7 +13,8 @@ if(!isset($_SESSION['ATIVIDADE_ATUAL'])){
 }
      
 
-$ativ = new Atividade($_SESSION['ATIVIDADE_ATUAL'],$_SESSION['ALUNO_TURMA']);
+$ativ = new Atividade($_SESSION['ATIVIDADE_ATUAL'],
+                      isset($_SESSION['ALUNO_TURMA']) ? $_SESSION['ALUNO_TURMA'] : -1);
 
 if (isset($_POST['resposta']))
   $resposta_atual = ($_POST['resposta']); 

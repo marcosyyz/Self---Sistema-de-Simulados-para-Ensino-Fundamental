@@ -161,7 +161,7 @@ class Atividade extends Classe
                                     QUESTAODIGITAR_LACUNA5
 				FROM QUESTAO_DIGITAR 					
 				WHERE QUESTAODIGITAR_CDG = ".$questao_cdg);
-            $this->questao_Fields =  $this->db->RowArray(0, MYSQL_ASSOC);		 
+            $this->questao_Fields =  $this->db->RowArray(0);		 
             $this->resposta_lacuna1 =  $this->questao_Fields['QUESTAODIGITAR_LACUNA1'];
             $this->resposta_lacuna2 =  $this->questao_Fields['QUESTAODIGITAR_LACUNA2'];
             $this->resposta_lacuna3 =  $this->questao_Fields['QUESTAODIGITAR_LACUNA3'];
@@ -181,7 +181,7 @@ class Atividade extends Classe
 					LEFT JOIN USUARIO ON USUARIO_CDG = QUESTAO_CRIADOR
 					LEFT JOIN MATERIA ON MATERIA_CDG = QUESTAO_MATERIA
 					WHERE QUESTAO_CDG = ".$questao_cdg);
-            $this->questao_Fields =  $this->db->RowArray(0, MYSQL_ASSOC);		 
+            $this->questao_Fields =  $this->db->RowArray(0);		 
             $this->resposta_correta =  $this->questao_Fields['QUESTAO_OPCAO1'];
         }
 	

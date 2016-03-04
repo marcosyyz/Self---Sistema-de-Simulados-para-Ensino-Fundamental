@@ -19,4 +19,6 @@ $palavra_chave = isset($_GET['p']) ?  $_GET['p'] : '';
 
 
 
+
+
 require ROOT.'view/cadastros/alunos/vlista_alunos.php';

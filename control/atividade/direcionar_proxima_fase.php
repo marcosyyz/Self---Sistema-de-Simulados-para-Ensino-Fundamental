@@ -3,6 +3,18 @@
 include_once '../../config.php';
 
 
+if(isset($_SESSION['TIPO_PROGRESSO'])){
+  if(($_SESSION['TIPO_PROGRESSO']) == 0 ){
+        include_once  ROOT.'view/vhead.php';
+        ?>
+        </head> 
+        <script>
+            window.close();
+        </script>
+        <?php
+  }
+}
+
 
 $atualizar_nivel = isset($_SESSION['ATUALIZAR_NIVEL']) ? $_SESSION['ATUALIZAR_NIVEL'] : 0 ;
 

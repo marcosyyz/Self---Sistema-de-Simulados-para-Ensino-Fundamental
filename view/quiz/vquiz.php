@@ -19,8 +19,9 @@ if(trim($questao_atual) == '')
    echo "ERRO 01 - QUESTAO NAO CARREGADA";     
   
 
+$ativ = new Atividade(isset($_SESSION['ATIVIDADE_ATUAL']) ? $_SESSION['ATIVIDADE_ATUAL'] : -1,        
+                      isset($_SESSION['ALUNO_TURMA'])  ?  $_SESSION['ALUNO_TURMA'] : -1  );
 
-$ativ = new Atividade(isset($_SESSION['ATIVIDADE_ATUAL']) ? $_SESSION['ATIVIDADE_ATUAL'] : -1,$_SESSION['ALUNO_TURMA']);
 $ativ->carregar_Questao($questao_atual,TIPO_SIMULADO);
  
 

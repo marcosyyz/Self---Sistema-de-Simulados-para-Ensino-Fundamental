@@ -5,16 +5,27 @@
         <group>
             <file>file:/C:/xampp/htdocs/aluno/view/quiz/vquiz.php</file>
             <file>file:/C:/xampp/htdocs/aluno/control/atividade/prof/index.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/control/quiz/finalizar_atividade.php</file>
             <file>file:/C:/xampp/htdocs/aluno/model/login.php</file>
             <file>file:/C:/xampp/htdocs/aluno/model/admin/importador.php</file>
             <file>file:/C:/xampp/htdocs/aluno/view/quiz/vgameover_atividade.php</file>
             <file>file:/C:/xampp/htdocs/aluno/control/quiz/iniciar_atividade.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/control/quiz/digitar/avancar_questao.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/control/quiz/avancar_questao.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/view/quiz/vpremio.php</file>
             <file>file:/C:/xampp/htdocs/aluno/model/admin/admin_usuario.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/control/cadastros/alunos/lista_alunos.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/view/cadastros/alunos/valuno_grid.php</file>
             <file>file:/C:/xampp/htdocs/aluno/control/login/verificar_autenticacao_aluno.php</file>
             <file>file:/C:/xampp/htdocs/aluno/control/atividade/index.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/view/cadastros/alunos/vlista_alunos.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/control/cadastros/alunos/loaddata_aluno_grid.php</file>
             <file>file:/C:/xampp/htdocs/aluno/view/admin/vimportador.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/view/quiz/digitar/vquiz.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/control/atividade/direcionar_proxima_fase.php</file>
             <file>file:/C:/xampp/htdocs/aluno/view/cadastros/atividades/vedit_atividades.php</file>
             <file>file:/C:/xampp/htdocs/aluno/control/atividade/anonimo/index.php</file>
+            <file>file:/C:/xampp/htdocs/aluno/model/atividade.php</file>
             <file>file:/C:/xampp/htdocs/aluno/control/admin/importar.php</file>
         </group>
     </open-files>
