@@ -23,11 +23,11 @@ $ativ = new Atividade($_SESSION['ATIVIDADE_ATUAL'],
 //if (isset($_POST['resposta1']))
 //  $resposta1 = ($_POST['resposta1']); 
 
-$resposta1 = isset($_POST['resposta1']) ? $_POST['resposta1'] : -1;
-$resposta2 = isset($_POST['resposta2']) ? $_POST['resposta2'] : -1;
-$resposta3 = isset($_POST['resposta3']) ? $_POST['resposta3'] : -1;
-$resposta4 = isset($_POST['resposta4']) ? $_POST['resposta4'] : -1;
-$resposta5 = isset($_POST['resposta5']) ? $_POST['resposta5'] : -1;
+$resposta1 = isset($_POST['resposta1']) ? html_entity_decode(utf8_decode($_POST['resposta1'])) : '-1';
+$resposta2 = isset($_POST['resposta2']) ? html_entity_decode(utf8_decode($_POST['resposta2'])) : '-1';
+$resposta3 = isset($_POST['resposta3']) ? html_entity_decode(utf8_decode($_POST['resposta3'])) : '-1';
+$resposta4 = isset($_POST['resposta4']) ? html_entity_decode(utf8_decode($_POST['resposta4'])) : '-1';
+$resposta5 = isset($_POST['resposta5']) ? html_entity_decode(utf8_decode($_POST['resposta5'])) : '-1';
 
 
 if (isset($_POST['questao_atual'])){
@@ -40,11 +40,11 @@ if (isset($_POST['questao_atual'])){
 
 
 
-$resposta_correta1 =  isset($questal_atual->campo->QUESTAODIGITAR_LACUNA1) ? $questal_atual->campo->QUESTAODIGITAR_LACUNA1 : -1 ;
-$resposta_correta2 =  isset($questal_atual->campo->QUESTAODIGITAR_LACUNA2) ? $questal_atual->campo->QUESTAODIGITAR_LACUNA2 : -1 ;
-$resposta_correta3 =  isset($questal_atual->campo->QUESTAODIGITAR_LACUNA3) ? $questal_atual->campo->QUESTAODIGITAR_LACUNA3 : -1 ;
-$resposta_correta4 =  isset($questal_atual->campo->QUESTAODIGITAR_LACUNA4) ? $questal_atual->campo->QUESTAODIGITAR_LACUNA4 : -1 ;
-$resposta_correta5 =  isset($questal_atual->campo->QUESTAODIGITAR_LACUNA5) ? $questal_atual->campo->QUESTAODIGITAR_LACUNA5 : -1 ;
+$resposta_correta1 =  isset($questal_atual->campo->QUESTAODIGITAR_LACUNA1) ? html_entity_decode(utf8_decode($questal_atual->campo->QUESTAODIGITAR_LACUNA1)) : '-1' ;
+$resposta_correta2 =  isset($questal_atual->campo->QUESTAODIGITAR_LACUNA2) ? html_entity_decode(utf8_decode($questal_atual->campo->QUESTAODIGITAR_LACUNA2)) : '-1' ;
+$resposta_correta3 =  isset($questal_atual->campo->QUESTAODIGITAR_LACUNA3) ? html_entity_decode(utf8_decode($questal_atual->campo->QUESTAODIGITAR_LACUNA3)) : '-1' ;
+$resposta_correta4 =  isset($questal_atual->campo->QUESTAODIGITAR_LACUNA4) ? html_entity_decode(utf8_decode($questal_atual->campo->QUESTAODIGITAR_LACUNA4)) : '-1' ;
+$resposta_correta5 =  isset($questal_atual->campo->QUESTAODIGITAR_LACUNA5) ? html_entity_decode(utf8_decode($questal_atual->campo->QUESTAODIGITAR_LACUNA5)) : '-1' ;
 
 //inicializar sessoes caso nao existam
 if (!isset($_SESSION['ACERTOS']))
@@ -98,10 +98,69 @@ function removeAccents( $string ){
 };
 
 
+function strAcentosToUpper($string){
+  $resultado = '';  
+  for ($i = 0; $i < strlen($string); $i++){
+    switch ($string[$i]){
+      case utf8_decode('á'): $string[$i] = utf8_decode('Á');
+                break;    
+      case utf8_decode('à'): $string[$i] = utf8_decode('À');
+                break;
+      case utf8_decode('â'): $string[$i] = utf8_decode('Â');
+                break;
+      case utf8_decode('ã'): $string[$i] = utf8_decode('Ã');
+                break;
+      case utf8_decode('ä'): $string[$i] = utf8_decode('Ä');
+                break;
+      case utf8_decode('é'): $string[$i] = utf8_decode('É');
+                break;
+      case utf8_decode('è'): $string[$i] = utf8_decode('È');
+                break;
+      case utf8_decode('ê'): $string[$i] = utf8_decode('Ê');
+                break;
+      case utf8_decode('ë'): $string[$i] = utf8_decode('Ë');
+                break;
+      case utf8_decode('í'): $string[$i] = utf8_decode('Í');
+                break;
+      case utf8_decode('ì'): $string[$i] = utf8_decode('Ì');
+                break;
+      case utf8_decode('î'): $string[$i] = utf8_decode('Î');
+                break;
+      case utf8_decode('ï'): $string[$i] = utf8_decode('Ï');
+                break;
+      case utf8_decode('ó'): $string[$i] = utf8_decode('Ó');
+                break;
+      case utf8_decode('ò'): $string[$i] = utf8_decode('Ò');
+                break;
+      case utf8_decode('õ'): $string[$i] = utf8_decode('Õ');
+                break;
+      case utf8_decode('ô'): $string[$i] = utf8_decode('Ô');
+                break;
+      case utf8_decode('ö'): $string[$i] = utf8_decode('Ö');
+                break;
+      case utf8_decode('ç'): $string[$i] = utf8_decode('Ç');
+                break;
+      case utf8_decode('ú'): $string[$i] = utf8_decode('Ú');
+                break;
+      case utf8_decode('ù'): $string[$i] = utf8_decode('Ù');
+                break;
+      case utf8_decode('û'): $string[$i] = utf8_decode('Û');
+                break;
+      case utf8_decode('ü'): $string[$i] = utf8_decode('Ü');
+                break;      
+    }
+     
+    $resultado .= $string[$i]; 
+     //á     
+     //àâãäªÁÀÂÃÄéèêëÉÈÊËíìîïÍÌÎÏóòôõöºÓÒÔÕÖúùûüÚÙÛÜçÇÑñ
+  }    
+  return strtoupper($resultado);
+}
+
 function temAcento($string) 
 { 
-    $regExp = "[áàâãäªÁÀÂÃÄéèêëÉÈÊËíìîïÍÌÎÏóòôõöºÓÒÔÕÖúùûüÚÙÛÜçÇÑñ.]";
-    return preg_match($regExp,$string); 
+    $regExp = "#[áàâãäªÁÀÂÃÄéèêëÉÈÊËíìîïÍÌÎÏóòôõöºÓÒÔÕÖúùûüÚÙÛÜçÇÑñ]#";
+    return (preg_match($regExp,utf8_encode($string)) == 1); 
 } 
 /***************************************************************************************************************/
 /***************************************************************************************************************/
@@ -109,34 +168,37 @@ function temAcento($string)
 
 //remover acentos se tiver //
 // e se o tipo da atividade não for de verificar os acentos //
-if($_SESSION['VERIFICA_ACENTUACAO'] == 0){
-    if(temAcento($resposta1))     
-        $resposta1 = removeAccents($resposta1);
-    if(temAcento($resposta_correta1))     
-        $resposta_correta1 = removeAccents($resposta_correta1);
 
-    if ($resposta_correta2  != -1){
+if($_SESSION['VERIFICA_ACENTUACAO'] == 0){
+    if(temAcento($resposta1)):
+        $resposta1 = removeAccents($resposta1);
+    endif;    
+    if(temAcento($resposta_correta1)):
+        $resposta_correta1 = removeAccents($resposta_correta1);
+    endif;
+
+    if ($resposta_correta2  != '-1'){
         if(temAcento($resposta2))
             $resposta2 = removeAccents($resposta2);
         if(temAcento($resposta_correta2))
             $resposta_correta2 = removeAccents($resposta_correta2);
     }
 
-    if ($resposta_correta3  != -1){
+    if ($resposta_correta3  != '-1'){
         if(temAcento($resposta3))
             $resposta3 = removeAccents($resposta3);
         if(temAcento($resposta_correta3))
             $resposta_correta3 = removeAccents($resposta_correta3);
     }
 
-    if ($resposta_correta4  != -1){
+    if ($resposta_correta4  != '-1'){
         if(temAcento($resposta4))
             $resposta4 = removeAccents($resposta4);
         if(temAcento($resposta_correta4))
             $resposta_correta4 = removeAccents($resposta_correta4);
     }
 
-    if ($resposta_correta5  != -1){
+    if ($resposta_correta5  != '-1'){
         if(temAcento($resposta5))
             $resposta5 = removeAccents($resposta5);
         if(temAcento($resposta_correta5))
@@ -163,11 +225,35 @@ if($_SESSION['VERIFICA_ACENTUACAO'] == 0){
            (trim(strtoupper($resposta5))  .'=='.  trim(strtoupper($resposta_correta1)));
     die;
 */
+
+/* antigo  com problema quando a resposta tem acento ( upper no char com acento transofrma em outro cacarter)
 $acertou  =  (trim(strtoupper($resposta1)) == trim(strtoupper($resposta_correta1)))
          &&  (trim(strtoupper($resposta2)) == trim(strtoupper($resposta_correta2)))
          &&  (trim(strtoupper($resposta3)) == trim(strtoupper($resposta_correta3)))
          &&  (trim(strtoupper($resposta4)) == trim(strtoupper($resposta_correta4)))
          &&  (trim(strtoupper($resposta5)) == trim(strtoupper($resposta_correta5)));
+*/
+
+$acertou  = (strcasecmp(trim(strAcentosToUpper($resposta1)), trim(strAcentosToUpper($resposta_correta1))) == 0 )
+         && (strcasecmp(trim(strAcentosToUpper($resposta2)), trim($resposta_correta2)) == 0 )
+         && (strcasecmp(trim(strAcentosToUpper($resposta3)), trim($resposta_correta3)) == 0 )
+         && (strcasecmp(trim(strAcentosToUpper($resposta4)), trim($resposta_correta4)) == 0 )
+         && (strcasecmp(trim(strAcentosToUpper($resposta5)), trim($resposta_correta5)) == 0 );
+
+
+
+    
+
+//echo "'".strAcentosToUpper($resposta1)."' = '".strAcentosToUpper($resposta_correta1)."'<br>";
+
+//echo (strcasecmp(trim($resposta1),trim($resposta_correta1)) == 0) ? 1 : 0;
+    
+//echo $acertou ? 1 : 0;
+
+//echo temAcento(($resposta_correta1))  ? 'tem acento' : 0 ;
+ //$resposta_correta1 = removeAccents($resposta_correta1);
+ //echo $resposta_correta1 ;
+//die;
 
 
 

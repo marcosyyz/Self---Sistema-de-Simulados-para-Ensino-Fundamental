@@ -184,6 +184,10 @@ $ativ->carregar_Questao($questao_atual,TIPO_DIGITAR);
                         $('.box-questao').removeClass("bounceInRight");				
 			$('.box-questao').addClass("bounceOutLeft");				
                         
+                        
+                       resposta = resposta.toUpperCase();
+                       
+                       
 			
                      //enviando submit   
 		    setTimeout( function () { 
@@ -192,7 +196,21 @@ $ativ->carregar_Questao($questao_atual,TIPO_DIGITAR);
 		});
 	  
 	    
-    
+                $(function(){
+                    /*
+                     * this swallows backspace keys on any non-input element.
+                     * stops backspace -> back
+                     */
+                    var rx = /INPUT|SELECT|TEXTAREA/i;
+
+                    $(document).bind("keydown keypress", function(e){
+                        if( e.which == 8 ){ // 8 == backspace
+                            if(!rx.test(e.target.tagName) || e.target.disabled || e.target.readOnly ){
+                                e.preventDefault();
+                            }
+                        }
+                    });
+                });
 
 
 function progressbar(objeto,acertos,total,acertou_anterior){
